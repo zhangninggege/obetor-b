@@ -131,7 +131,7 @@
       <div v-if="fileList.length < 8">
         <a-icon type="plus" />
         <div class="ant-upload-text">
-          Upload
+         上传图片
         </div>
       </div>
     </a-upload>
@@ -140,10 +140,10 @@
     </a-modal>
     <a-form-model-item :wrapper-col="{ span: 14, offset: 4 }">
       <a-button type="primary" @click="onSubmit">
-        Create
+       提交
       </a-button>
       <a-button style="margin-left: 10px;" @click="resetForm">
-        Reset
+       重置
       </a-button>
     </a-form-model-item>
   </a-form-model>
@@ -165,35 +165,7 @@ export default {
       previewVisible: false,
       previewImage: '',
       fileList: [
-        {
-          uid: '-1',
-          name: 'image.png',
-          status: 'done',
-          url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
-        },
-        {
-          uid: '-2',
-          name: 'image.png',
-          status: 'done',
-          url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
-        },
-        {
-          uid: '-3',
-          name: 'image.png',
-          status: 'done',
-          url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
-        },
-        {
-          uid: '-4',
-          name: 'image.png',
-          status: 'done',
-          url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
-        },
-        {
-          uid: '-5',
-          name: 'image.png',
-          status: 'error',
-        },
+       
       ],
       labelCol: { span: 4 },
       wrapperCol: { span: 14 },
@@ -251,6 +223,7 @@ export default {
         file.preview = await getBase64(file.originFileObj);
       }
       this.previewImage = file.url || file.preview;
+      this.previewVedio = file.url || file.preview;
       this.previewVisible = true;
     },
     handleChange({ fileList }) {

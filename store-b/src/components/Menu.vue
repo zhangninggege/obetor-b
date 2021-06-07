@@ -12,18 +12,6 @@ borderRight:'1px solid #000'}"
             添加商品
           </router-link>
         </a-menu-item>
-        <a-menu-item key="2">
-          <router-link to="/goods/delete">
-            删除商品
-          </router-link>
-
-        </a-menu-item>
-        <a-menu-item key="3">
-          <router-link to="/goods/change">
-            修改商品
-          </router-link>
-
-        </a-menu-item>
         <a-menu-item key="4">
           <router-link to="/goods/list">
             商品列表

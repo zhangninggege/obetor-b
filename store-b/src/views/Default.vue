@@ -1,7 +1,7 @@
 <template>
   <div class="home ">
     <a-layout>
-      <a-layout-header class="my-header" :style="{ position: 'fixed', zIndex: 1, width: '100%' }">
+      <a-layout-header class="my-header" :style="{ position: 'fixed', zIndex: 100, width: '100%' }">
         <a-col :span='3'>
           <div class="header__logo">
             logo
