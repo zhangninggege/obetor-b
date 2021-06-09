@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import Login from '@/views/Login.vue';
 import Default from '@/views/Default.vue';
 import DataSale from '@/views/DataAnalys/DataSale.vue';
+import store from '@/store/index.js'
 
 Vue.use(VueRouter);
 
@@ -80,5 +81,16 @@ const routes = [
 const router = new VueRouter({
   routes,
 });
-
+router.beforeEach((to,from,next)=>{
+  if(to.path !=='/login'){
+    if(store.state.user.appkey && store.state.user.username && store.state.user.email && store.state.user.role){
+      return next();
+    }else{
+      return next('login')
+    }
+    
+  }else{
+    return next()
+  }
+})
 export default router;

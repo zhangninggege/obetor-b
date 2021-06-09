@@ -14,8 +14,11 @@
         </a-col>
         <a-col :span='3'>
           <div class="header__user">
-            你好，张宁
+            你好,{{ this.$store.state.user.username }}
+            <a-icon type="down" :style="{padding:'10px'}"/>
+             <div class="logout" @click="logout">退出</div>
           </div>
+         
         </a-col>
       </a-layout-header>
       <a-layout-content class="my-content" :style="{position:'relative', width:'100%',top:'64px',}">
@@ -32,7 +35,7 @@
 
 <script>
 import MenuNav from '@/components/Menu.vue';
-
+import{removeUserLocal} from '@/utils/localStorage.js'
 export default {
   components: {
     MenuNav,
@@ -40,7 +43,13 @@ export default {
   data() {
     return {};
   },
-};
+  methods:{
+    logout(){
+      removeUserLocal()
+      this.$router.push('/login')
+  }
+}
+}
 </script>
 <style lang="less" scoped>
   .home .my-header {
@@ -51,6 +60,20 @@ export default {
     border-top: transparent;
     border-left: transparent;
     text-align: center;
+    .header__user{
+      margin-right: 5px;
+      &:hover .logout{
+        display: block;
+      }
+       .logout{
+      display: none;
+      background-color: darkgrey;
+      margin-right: 5px;
+      border-radius:5px ;
+    }
+    }
+   
+
   }
 
 </style>
